@@ -110,8 +110,6 @@
 		9D8169F5263FA48500DED7F8 /* Light@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D8169F3263FA48500DED7F8 /* Light@2x.png */; };
 		9D8169FA263FA4CE00DED7F8 /* IconNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8169F9263FA4CE00DED7F8 /* IconNames.swift */; };
 		9D816A0F263FBD0600DED7F8 /* CyclingStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D816A0E263FBD0600DED7F8 /* CyclingStatus.swift */; };
-		9D816A152640A4F000DED7F8 /* Default@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D816A132640A4F000DED7F8 /* Default@3x.png */; };
-		9D816A162640A4F000DED7F8 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D816A142640A4F000DED7F8 /* Default@2x.png */; };
 		9D816A1E2641BAD000DED7F8 /* ResetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D816A1D2641BAD000DED7F8 /* ResetView.swift */; };
 		9D816A2E2642562A00DED7F8 /* Light@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D816A2B2642562900DED7F8 /* Light@2x~ipad.png */; };
 		9D816A2F2642562A00DED7F8 /* Light-83.5@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D816A2C2642562A00DED7F8 /* Light-83.5@2x~ipad.png */; };
@@ -292,8 +290,6 @@
 		9D8169F3263FA48500DED7F8 /* Light@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Light@2x.png"; sourceTree = "<group>"; };
 		9D8169F9263FA4CE00DED7F8 /* IconNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconNames.swift; sourceTree = "<group>"; };
 		9D816A0E263FBD0600DED7F8 /* CyclingStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CyclingStatus.swift; sourceTree = "<group>"; };
-		9D816A132640A4F000DED7F8 /* Default@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@3x.png"; path = "../../../../AppIcons/GoCycling/Default_AppIcons/Assets.xcassets/AppIcon.appiconset/Default@3x.png"; sourceTree = "<group>"; };
-		9D816A142640A4F000DED7F8 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../../../../AppIcons/GoCycling/Default_AppIcons/Assets.xcassets/AppIcon.appiconset/Default@2x.png"; sourceTree = "<group>"; };
 		9D816A1D2641BAD000DED7F8 /* ResetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetView.swift; sourceTree = "<group>"; };
 		9D816A2B2642562900DED7F8 /* Light@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Light@2x~ipad.png"; sourceTree = "<group>"; };
 		9D816A2C2642562A00DED7F8 /* Light-83.5@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Light-83.5@2x~ipad.png"; sourceTree = "<group>"; };
@@ -552,11 +548,9 @@
 		9D8169E3263F84D400DED7F8 /* Alternate App Icons */ = {
 			isa = PBXGroup;
 			children = (
-				9D816A142640A4F000DED7F8 /* Default@2x.png */,
 				9D816A3F2642564E00DED7F8 /* Default-83.5@2x~ipad.png */,
 				9D816A3D2642564E00DED7F8 /* Default@2x~ipad.png */,
 				9D816A3E2642564E00DED7F8 /* Default~ipad.png */,
-				9D816A132640A4F000DED7F8 /* Default@3x.png */,
 				9D1C40CC26426E740032125A /* Default Inverted@2x.png */,
 				9D1C40D426426E7F0032125A /* Default Inverted-83.5@2x~ipad.png */,
 				9D1C40D526426E7F0032125A /* Default Inverted@2x~ipad.png */,
@@ -900,7 +894,6 @@
 				9D601E7C26E6D02200844CD1 /* Bronze~ipad.png in Resources */,
 				9D601ED726E72FD600844CD1 /* Sunset Inverted@3x.png in Resources */,
 				9D601EA426E6D06C00844CD1 /* Gold@3x.png in Resources */,
-				9D816A162640A4F000DED7F8 /* Default@2x.png in Resources */,
 				9D601ECC26E72FC900844CD1 /* Sunset~ipad.png in Resources */,
 				9D816A412642564E00DED7F8 /* Default~ipad.png in Resources */,
 				9D601ECF26E72FC900844CD1 /* Sunset@3x.png in Resources */,
@@ -939,7 +932,6 @@
 				9D601E9D26E6D06000844CD1 /* Silver Inverted@3x.png in Resources */,
 				9D601EB726E72FAB00844CD1 /* Ocean@2x~ipad.png in Resources */,
 				9D601EBA26E72FAB00844CD1 /* Ocean@3x.png in Resources */,
-				9D816A152640A4F000DED7F8 /* Default@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
