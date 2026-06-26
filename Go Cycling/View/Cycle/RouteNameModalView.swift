@@ -55,6 +55,7 @@ struct RouteNameModalView: View {
                     .border(Color(UIColor.separator))
                     .padding()
                     .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .accessibilityIdentifier(AutomationIDs.Cycle.categoryNameTextField)
                 Spacer()
                 // Extra option for existing routes where the category can be removed
                 if (self.bikeRideToEdit != nil) {
@@ -71,6 +72,7 @@ struct RouteNameModalView: View {
                 }
                 .disabled(!((self.typedRouteName.count > 0)))
                 .padding()
+                .accessibilityIdentifier(AutomationIDs.Cycle.saveRouteNameButton)
                 Divider()
                 Button (action: {
                     presentationMode.wrappedValue.dismiss()
@@ -86,6 +88,7 @@ struct RouteNameModalView: View {
                         .bold()
                 }
                 .padding()
+                .accessibilityIdentifier(AutomationIDs.Cycle.saveRouteWithoutCategoryButton)
                 Divider()
             case .existing:
                 if (routeNamingViewModel.routeNames.count > 0) {

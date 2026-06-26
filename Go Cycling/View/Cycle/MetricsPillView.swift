@@ -27,14 +27,17 @@ struct MetricsPillView: View {
                         metricColumn(label: "Speed",
                                      value: MetricsFormatting.formatSpeedWithoutUnits(speed: currentSpeed ?? 0.0, usingMetric: preferences.usingMetric),
                                      units: MetricsFormatting.getSpeedUnits(usingMetric: preferences.usingMetric))
+                        .accessibilityIdentifier(AutomationIDs.Cycle.metricsSpeed)
                         Divider().frame(height: 50)
                         metricColumn(label: "Distance",
                                      value: MetricsFormatting.formatDistanceWithoutUnits(distance: cyclingStatus.isCycling ? currentDistance : 0.0, usingMetric: preferences.usingMetric),
                                      units: MetricsFormatting.getDistanceUnits(usingMetric: preferences.usingMetric))
+                        .accessibilityIdentifier(AutomationIDs.Cycle.metricsDistance)
                         Divider().frame(height: 50)
                         metricColumn(label: "Altitude",
                                      value: MetricsFormatting.formatElevationWithoutUnits(elevation: currentAltitude ?? 0.0, usingMetric: preferences.usingMetric),
                                      units: MetricsFormatting.getElevationUnits(usingMetric: preferences.usingMetric))
+                        .accessibilityIdentifier(AutomationIDs.Cycle.metricsAltitude)
                     }
                     .transition(.opacity)
                 } else {

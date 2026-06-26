@@ -40,6 +40,7 @@ struct ResetView: View {
             Text("Delete All Stored Routes")
                 .foregroundColor(Color(UserPreferences.convertColourChoiceToUIColor(colour: preferences.colourChoiceConverted)))
         }
+        .accessibilityIdentifier(AutomationIDs.Settings.deleteAllStoredRoutesButton)
         .alert(isPresented: $showingDeleteAlert) {
             Alert(title: Text("Are you sure that you want to delete all stored cycling routes?"),
                   message: Text("This action is not reversible."),

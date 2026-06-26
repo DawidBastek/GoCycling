@@ -67,6 +67,7 @@ struct MapView: UIViewRepresentable {
         mapView.showsUserLocation = true
         mapView.showsCompass = false
         mapView.mapType = preferences.mapTypeChoiceConverted.mkMapType
+        mapView.accessibilityIdentifier = AutomationIDs.Cycle.mapView
         return mapView
     }
 

@@ -172,7 +172,7 @@ struct ListView: View {
     var body: some View {
         if (bikeRides.count > 0) {
             List {
-                ForEach(bikeRides) { bikeRide in
+                ForEach(Array(bikeRides.enumerated()), id: \.element) { index, bikeRide in
                     NavigationLink(destination: SingleBikeRideView(bikeRide: bikeRide, navigationTitle: MetricsFormatting.formatDate(date: bikeRide.cyclingStartTime))) {
                         // Bike ride list cell
                         VStack(spacing: 10) {
@@ -205,6 +205,7 @@ struct ListView: View {
                             }
                         }
                     }
+                    .accessibilityIdentifier(AutomationIDs.History.routeCell(at: index + 1))
                 }
                 .onDelete(perform: preferences.deletionEnabled ?  self.showDeleteAlert : nil)
                 .onChange(of: shouldBeDeleted, perform: { _ in
@@ -221,6 +222,7 @@ struct ListView: View {
                 HStack {
                     Spacer()
                     Text("No completed routes to display!")
+                        .accessibilityIdentifier(AutomationIDs.History.emptyStateLabel)
                     Spacer()
                 }
                 Spacer()

@@ -68,6 +68,7 @@ struct RouteDetailMapView: UIViewRepresentable {
         mapView.isScrollEnabled = true
         mapView.isZoomEnabled = true
         mapView.mapType = mapType
+        mapView.accessibilityIdentifier = AutomationIDs.History.routeDetailsMapView
         let topLeft = MKMapPoint(CLLocationCoordinate2D(latitude: center.latitude + span / 2, longitude: center.longitude - span / 2))
         let bottomRight = MKMapPoint(CLLocationCoordinate2D(latitude: center.latitude - span / 2, longitude: center.longitude + span / 2))
         let mapRect = MKMapRect(x: min(topLeft.x, bottomRight.x),

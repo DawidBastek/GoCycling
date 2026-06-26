@@ -29,7 +29,9 @@ struct UnitsView: View {
                 }
             )) {
                 Text("Imperial").tag(UnitsChoice.imperial)
+                    .accessibilityIdentifier(AutomationIDs.Settings.imperialSegment)
                 Text("Metric").tag(UnitsChoice.metric)
+                    .accessibilityIdentifier(AutomationIDs.Settings.metricSegment)
             }
             .frame(maxWidth: 150)
             .pickerStyle(.segmented)

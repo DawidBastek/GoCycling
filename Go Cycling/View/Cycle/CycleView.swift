@@ -70,22 +70,27 @@ struct CycleView: View {
                         Button(action: { self.pauseCycling() }) {
                             TimerButton(label: "Pause", buttonColour: UIColor.systemYellow, systemImageName: "pause.fill", expandsHorizontally: true)
                         }
+                        .accessibilityIdentifier(AutomationIDs.Cycle.pauseButton)
                         Button(action: { self.confirmStop() }) {
                             TimerButton(label: "Stop", buttonColour: UIColor.systemRed, isSecondary: true, systemImageName: "stop.fill")
                         }
+                        .accessibilityIdentifier(AutomationIDs.Cycle.stopButton)
                     }
                     if timer.isStopped {
                         Button(action: { self.startCycling() }) {
                             TimerButton(label: "Start", buttonColour: UIColor.systemGreen, systemImageName: "play.fill", expandsHorizontally: true)
                         }
+                        .accessibilityIdentifier(AutomationIDs.Cycle.startButton)
                     }
                     if timer.isPaused {
                         Button(action: { self.resumeCycling() }) {
                             TimerButton(label: "Resume", buttonColour: UIColor.systemGreen, systemImageName: "play.fill", expandsHorizontally: true)
                         }
+                        .accessibilityIdentifier(AutomationIDs.Cycle.resumeButton)
                         Button(action: { self.confirmStop() }) {
                             TimerButton(label: "Stop", buttonColour: UIColor.systemRed, isSecondary: true, systemImageName: "stop.fill")
                         }
+                        .accessibilityIdentifier(AutomationIDs.Cycle.stopButton)
                     }
                 }
                 .padding(.horizontal, 24)

@@ -35,6 +35,10 @@ struct GoCyclingApp: App {
         
         // Retrieve stored data to be used by all views - create state objects for environment objects
         let managedObjectContext = persistenceController.container.viewContext
+        
+        // Handle test data injection for UI testing
+        TestDataManager.handleLaunchArguments(context: managedObjectContext)
+        
         let bikeRidesStorage = BikeRideStorage(managedObjectContext: managedObjectContext)
         self._bikeRides = StateObject(wrappedValue: bikeRidesStorage)
     }

@@ -373,21 +373,10 @@
 		E0E0B90D2FEDC7CF00A171A8 /* Swipe+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Swipe+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		E0E0A2EB2FEAC04500A171A8 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Testing/AutomationIDs.swift,
-				Testing/LaunchArguments.swift,
-			);
-			target = 9DAB832F25FECAD400F5C42E /* Go CyclingUITests */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		E0E08DB02FE938D300A171A8 /* UITests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = UITests; sourceTree = "<group>"; };
 		E0E0A2CB2FE944A500A171A8 /* TestData */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TestData; sourceTree = "<group>"; };
-		E0E0A2E22FEAAF8200A171A8 /* GoCyclingCommon */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (E0E0A2EB2FEAC04500A171A8 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = GoCyclingCommon; sourceTree = "<group>"; };
+		E0E0A2E22FEAAF8200A171A8 /* GoCyclingCommon */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = GoCyclingCommon; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */

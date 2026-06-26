@@ -14,6 +14,15 @@ struct SingleChartListCellView: View {
     var index: Int
     
     @EnvironmentObject var preferences: Preferences
+
+    private var chartAccessibilityID: String {
+        switch index {
+        case 0: return AutomationIDs.Statistics.chartPast7Days
+        case 1: return AutomationIDs.Statistics.chartPast5Weeks
+        case 2: return AutomationIDs.Statistics.chartPast30Weeks
+        default: return "statistics.chartUnknown"
+        }
+    }
     
     var body: some View {
         VStack(spacing: 10) {
@@ -21,6 +30,7 @@ struct SingleChartListCellView: View {
                 Text(CyclingChartsViewModel.titleStrings[index])
                     .font(.headline)
                     .foregroundColor(Color(UserPreferences.convertColourChoiceToUIColor(colour: preferences.colourChoiceConverted)))
+                    .accessibilityIdentifier(chartAccessibilityID)
                 Spacer()
             }
             HStack {
