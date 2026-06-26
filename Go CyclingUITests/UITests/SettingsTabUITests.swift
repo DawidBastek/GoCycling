@@ -70,5 +70,10 @@ final class SettingsTabUITests: BaseTest {
             named: "history_list_imperial_units",
             testCase: self
         )
+        
+        TabBarPage()
+            .goToSettings()
+            .tapMetric()
+            .verifyMetricUnitSelected()
     }
 }
