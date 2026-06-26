@@ -1,0 +1,216 @@
+//
+//  ContentView.swift
+//  Go Cycling
+//
+//  Created by Anthony Hopkins on 2021-03-14.
+//
+
+import SwiftUI
+
+struct CycleView: View {
+    
+    @EnvironmentObject var cyclingStatus: CyclingStatus
+    
+    @StateObject var timer = TimerViewModel()
+    @State private var showingAlert = false
+    @State private var cyclingSpeed = 0.0
+    @State private var cyclingStartTime = Date()
+    @State private var timeCycling = 0.0
+    @State private var showingRouteNamingPopover = false
+    @State private var isAutoPaused: Bool = false
+    
+    @StateObject var locationManager = LocationViewModel.locationManager
+    
+    @EnvironmentObject var preferences: Preferences
+    
+    let telemetryManager = TelemetryManager.sharedTelemetryManager
+    let telemetryTab = TelemetryTab.Cycle
+    
+    var body: some View {
+        GeometryReader { (geometry) in
+            VStack {
+                MapWithSpeedView(cyclingStartTime: $cyclingStartTime, timeCycling: $timeCycling)
+                .layoutPriority(1)
+                // Alert about visiting settings if location access is not allowed
+                .alert(isPresented: $locationManager.showLocationSettingsAlert) {
+                    Alert(title: Text("Location settings may not be correct"),
+                          message: Text(locationManager.locationSettingsAlertMessage),
+                          primaryButton: .default(Text("Open Settings")) {
+                            // Pause the current cycling session
+                            self.timer.pause()
+                            // Open Settings app
+                            UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!, options: [:], completionHandler: nil)
+                          },
+                          secondaryButton: .cancel(Text("Ignore"))
+                    )
+                }
+                VStack(spacing: 4) {
+                    Text(formatTimeString(accumulatedTime: timer.totalAccumulatedTime))
+                        .font(.custom("Avenir", size: 40))
+                    if isAutoPaused {
+                        HStack(spacing: 6) {
+                            Spacer(minLength: 0)
+                            Image(systemName: "pause.circle.fill")
+                                .font(.system(size: 13, weight: .bold))
+                            Text("Auto-Paused")
+                                .font(.system(size: 14, weight: .bold))
+                            Spacer(minLength: 0)
+                        }
+                        .foregroundColor(Color(.systemYellow))
+                        .padding(.vertical, 12)
+                        .background(Color(.systemYellow).opacity(0.12))
+                        .clipShape(Capsule())
+                        .overlay(Capsule().stroke(Color(.systemYellow), lineWidth: 1.5))
+                        .padding(.horizontal, 24)
+                    }
+                }
+                Spacer()
+                HStack(spacing: 16) {
+                    if timer.isRunning {
+                        Button(action: { self.pauseCycling() }) {
+                            TimerButton(label: "Pause", buttonColour: UIColor.systemYellow, systemImageName: "pause.fill", expandsHorizontally: true)
+                        }
+                        .accessibilityIdentifier(AutomationIDs.Cycle.pauseButton)
+                        Button(action: { self.confirmStop() }) {
+                            TimerButton(label: "Stop", buttonColour: UIColor.systemRed, isSecondary: true, systemImageName: "stop.fill")
+                        }
+                        .accessibilityIdentifier(AutomationIDs.Cycle.stopButton)
+                    }
+                    if timer.isStopped {
+                        Button(action: { self.startCycling() }) {
+                            TimerButton(label: "Start", buttonColour: UIColor.systemGreen, systemImageName: "play.fill", expandsHorizontally: true)
+                        }
+                        .accessibilityIdentifier(AutomationIDs.Cycle.startButton)
+                    }
+                    if timer.isPaused {
+                        Button(action: { self.resumeCycling() }) {
+                            TimerButton(label: "Resume", buttonColour: UIColor.systemGreen, systemImageName: "play.fill", expandsHorizontally: true)
+                        }
+                        .accessibilityIdentifier(AutomationIDs.Cycle.resumeButton)
+                        Button(action: { self.confirmStop() }) {
+                            TimerButton(label: "Stop", buttonColour: UIColor.systemRed, isSecondary: true, systemImageName: "stop.fill")
+                        }
+                        .accessibilityIdentifier(AutomationIDs.Cycle.stopButton)
+                    }
+                }
+                .padding(.horizontal, 24)
+                .padding(.bottom, 20)
+                // Confirmation alert about ending the current route
+                .alert(isPresented: $showingAlert) {
+                    Alert(title: Text("Are you sure that you want to end the current route?"),
+                          message: Text("Please confirm that you are ready to end the current route."),
+                          primaryButton: .destructive(Text("Stop")) {
+                            // Completing a route is a review worthy event
+                            ReviewManager.incrementReviewWorthyCount()
+                            // Keep track of whether user has completed a route
+                            ReviewManager.completedRoute()
+                        
+                            self.isAutoPaused = false
+                            self.timeCycling = timer.totalAccumulatedTime
+                            self.timer.stop()
+                            cyclingStatus.stoppedCycling()
+                            
+                            // Present route naming popover if necessary
+                            if (preferences.namedRoutes) {
+                                self.showingRouteNamingPopover = true
+                            }
+                        
+                            telemetryManager.sendCyclingSignal(
+                                tab: telemetryTab,
+                                action: TelemetryCyclingAction.ConfirmStop
+                            )
+                          },
+                          secondaryButton: .cancel()
+                    )
+                }
+                Spacer()
+            }
+            .sheet(isPresented: $showingRouteNamingPopover) {
+                RouteNameModalView(showEditModal: $showingRouteNamingPopover, bikeRideToEdit: nil)
+            }
+            .onChange(of: locationManager.autoPauseState) { state in
+                guard preferences.autoPauseEnabled else { return }
+                switch state {
+                case .stopped:
+                    if !isAutoPaused && timer.isRunning {
+                        withAnimation(.easeInOut(duration: 0.3)) {
+                            pauseCycling()
+                            isAutoPaused = true
+                        }
+                    }
+                case .resumed:
+                    if isAutoPaused {
+                        withAnimation(.easeInOut(duration: 0.3)) {
+                            resumeCycling()
+                            isAutoPaused = false
+                        }
+                        locationManager.autoPauseState = .moving
+                    }
+                default:
+                    break
+                }
+            }
+        }
+    }
+    
+    func formatTimeString(accumulatedTime: TimeInterval) -> String {
+        let hours = Int(accumulatedTime) / 3600
+        let minutes = Int(accumulatedTime) / 60 % 60
+        let seconds = Int(accumulatedTime) % 60
+        return String(format:"%02i:%02i:%02i", hours, minutes, seconds)
+    }
+    
+    func startCycling() {
+        // Send an alert about location settings if it is necessary
+        locationManager.setLocationAlertStatus()
+        cyclingStatus.startedCycling()
+        // Call synchronously before any SwiftUI re-renders so the pre-ride
+        // location/distance data is already cleared when MapView first draws the route
+        locationManager.startedCycling()
+        self.cyclingStartTime = Date()
+        self.timeCycling = 0.0
+        self.timer.start()
+        
+        telemetryManager.sendCyclingSignal(
+            tab: telemetryTab,
+            action: TelemetryCyclingAction.Start
+        )
+    }
+    
+    func pauseCycling() {
+        self.timer.pause()
+        
+        telemetryManager.sendCyclingSignal(
+            tab: telemetryTab,
+            action: TelemetryCyclingAction.Pause
+        )
+    }
+    
+    func resumeCycling() {
+        isAutoPaused = false
+        locationManager.autoPauseState = .moving
+        locationManager.resetStalenessDuration()
+        self.timer.start()
+        
+        telemetryManager.sendCyclingSignal(
+            tab: telemetryTab,
+            action: TelemetryCyclingAction.Resume
+        )
+    }
+    
+    func confirmStop() {
+        self.timer.pause()
+        showingAlert = true
+        
+        telemetryManager.sendCyclingSignal(
+            tab: telemetryTab,
+            action: TelemetryCyclingAction.Stop
+        )
+    }
+}
+
+struct CycleView_Previews: PreviewProvider {
+    static var previews: some View {
+        CycleView()
+    }
+}

@@ -1,0 +1,71 @@
+//
+//  SettingsView.swift
+//  Go Cycling
+//
+//  Created by Anthony Hopkins on 2021-04-17.
+//
+
+import SwiftUI
+
+struct SettingsView: View {
+    
+    @EnvironmentObject var cyclingStatus: CyclingStatus
+
+    var body: some View {
+        NavigationView {
+            VStack {
+                if (cyclingStatus.isCycling) {
+                    Text("Certain sections are disabled while cycling is in progress. Please end the current cycling session to enable editing of all settings.")
+                        .padding(.all, 10)
+                }
+                Form {
+                    Section(header: Text("Customization")) {
+                        ColourView()
+                        ChangeAppIconView().environmentObject(IconNames())
+                    }
+                    .disabled(cyclingStatus.isCycling)
+                    .navigationBarTitle("Settings", displayMode: .inline)
+                    Section(header: Text("Cycling Metrics")) {
+                        UnitsView()
+                    }
+                    .disabled(cyclingStatus.isCycling)
+                    Section(header: Text("Cycling History")) {
+                        CyclingHistorySettingsView()
+                    }
+                    .disabled(cyclingStatus.isCycling)
+                    Section(header: Text("Cycling")) {
+                        CyclingView()
+                    }
+                    .disabled(cyclingStatus.isCycling)
+                    Section(header: Text("Sync")) {
+                        SyncSettingsView()
+                    }
+                    .disabled(cyclingStatus.isCycling)
+                    Section(header: Text("About the app")) {
+                        AboutAppView()
+                    }
+                    Section(header: Text("Support")) {
+                        SupportView()
+                    }
+                    Section(header: Text("Reset")) {
+                        ResetView()
+                    }
+                    .disabled(cyclingStatus.isCycling)
+                    Section(header: Text("Privacy"),
+                            footer: Text("Analytics are completely anonymous and contain no personal or identifiable information. They help prioritize future improvements. You can opt out at any time.")
+                                .fixedSize(horizontal: false, vertical: true)) {
+                        PrivacySettingsView()
+                    }
+                }
+                .navigationBarTitle(Text("Settings"))
+            }
+        }
+        .navigationViewStyle(StackNavigationViewStyle())
+    }
+}
+
+struct SettingsView_Previews: PreviewProvider {
+    static var previews: some View {
+        SettingsView()
+    }
+}
