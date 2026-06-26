@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		42883D67661B4EC68F96065F /* MapTypeChoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA126438CB9497BB6E22458 /* MapTypeChoice.swift */; };
+		46DB33CB2FEF26C900554490 /* HistoryTabUITests_testHistoryRouteDetails_history_list_with_routes.png in Resources */ = {isa = PBXBuildFile; fileRef = 46DB33C12FEF26C900554490 /* HistoryTabUITests_testHistoryRouteDetails_history_list_with_routes.png */; };
+		46DB33CC2FEF26C900554490 /* SettingsTabUITests_testUnitsToggleAffectsHistoryDisplay_history_list_imperial_units.png in Resources */ = {isa = PBXBuildFile; fileRef = 46DB33C42FEF26C900554490 /* SettingsTabUITests_testUnitsToggleAffectsHistoryDisplay_history_list_imperial_units.png */; };
+		46DB33CD2FEF26C900554490 /* HistoryTabUITests_testHistoryRouteDetails_history_route_details.png in Resources */ = {isa = PBXBuildFile; fileRef = 46DB33C22FEF26C900554490 /* HistoryTabUITests_testHistoryRouteDetails_history_route_details.png */; };
+		46DB33CE2FEF26C900554490 /* SettingsTabUITests_testUnitsToggleAffectsHistoryDisplay_history_list_metric_units.png in Resources */ = {isa = PBXBuildFile; fileRef = 46DB33C52FEF26C900554490 /* SettingsTabUITests_testUnitsToggleAffectsHistoryDisplay_history_list_metric_units.png */; };
+		46DB33CF2FEF26C900554490 /* StatisticsTabUITests_testCyclingChartNavigationAndContent_statistics_charts_list.png in Resources */ = {isa = PBXBuildFile; fileRef = 46DB33C82FEF26C900554490 /* StatisticsTabUITests_testCyclingChartNavigationAndContent_statistics_charts_list.png */; };
+		46DB33D02FEF26C900554490 /* StatisticsTabUITests_testCyclingChartNavigationAndContent_statistics_chart_detail_7days.png in Resources */ = {isa = PBXBuildFile; fileRef = 46DB33C72FEF26C900554490 /* StatisticsTabUITests_testCyclingChartNavigationAndContent_statistics_chart_detail_7days.png */; };
+		46DB33D32FEF26DC00554490 /* Go CyclingUITests.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 46DB33D12FEF26DC00554490 /* Go CyclingUITests.xctestplan */; };
 		9D1C40CE26426E740032125A /* Default Inverted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D1C40CC26426E740032125A /* Default Inverted@2x.png */; };
 		9D1C40CF26426E740032125A /* Default Inverted@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D1C40CD26426E740032125A /* Default Inverted@3x.png */; };
 		9D1C40D626426E7F0032125A /* Default Inverted~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D1C40D326426E7F0032125A /* Default Inverted~ipad.png */; };
@@ -197,6 +204,13 @@
 /* Begin PBXFileReference section */
 		2AA126438CB9497BB6E22458 /* MapTypeChoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTypeChoice.swift; sourceTree = "<group>"; };
 		2F323539CC6E4DC7AA214303 /* RouteDetailMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteDetailMapView.swift; sourceTree = "<group>"; };
+		46DB33C12FEF26C900554490 /* HistoryTabUITests_testHistoryRouteDetails_history_list_with_routes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HistoryTabUITests_testHistoryRouteDetails_history_list_with_routes.png; sourceTree = "<group>"; };
+		46DB33C22FEF26C900554490 /* HistoryTabUITests_testHistoryRouteDetails_history_route_details.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HistoryTabUITests_testHistoryRouteDetails_history_route_details.png; sourceTree = "<group>"; };
+		46DB33C42FEF26C900554490 /* SettingsTabUITests_testUnitsToggleAffectsHistoryDisplay_history_list_imperial_units.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SettingsTabUITests_testUnitsToggleAffectsHistoryDisplay_history_list_imperial_units.png; sourceTree = "<group>"; };
+		46DB33C52FEF26C900554490 /* SettingsTabUITests_testUnitsToggleAffectsHistoryDisplay_history_list_metric_units.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SettingsTabUITests_testUnitsToggleAffectsHistoryDisplay_history_list_metric_units.png; sourceTree = "<group>"; };
+		46DB33C72FEF26C900554490 /* StatisticsTabUITests_testCyclingChartNavigationAndContent_statistics_chart_detail_7days.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StatisticsTabUITests_testCyclingChartNavigationAndContent_statistics_chart_detail_7days.png; sourceTree = "<group>"; };
+		46DB33C82FEF26C900554490 /* StatisticsTabUITests_testCyclingChartNavigationAndContent_statistics_charts_list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StatisticsTabUITests_testCyclingChartNavigationAndContent_statistics_charts_list.png; sourceTree = "<group>"; };
+		46DB33D12FEF26DC00554490 /* Go CyclingUITests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Go CyclingUITests.xctestplan"; sourceTree = "<group>"; };
 		9D1C40CC26426E740032125A /* Default Inverted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default Inverted@2x.png"; sourceTree = "<group>"; };
 		9D1C40CD26426E740032125A /* Default Inverted@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default Inverted@3x.png"; sourceTree = "<group>"; };
 		9D1C40D326426E7F0032125A /* Default Inverted~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default Inverted~ipad.png"; sourceTree = "<group>"; };
@@ -417,6 +431,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		46DB33C32FEF26C900554490 /* HistoryTabUITests */ = {
+			isa = PBXGroup;
+			children = (
+				46DB33C12FEF26C900554490 /* HistoryTabUITests_testHistoryRouteDetails_history_list_with_routes.png */,
+				46DB33C22FEF26C900554490 /* HistoryTabUITests_testHistoryRouteDetails_history_route_details.png */,
+			);
+			path = HistoryTabUITests;
+			sourceTree = "<group>";
+		};
+		46DB33C62FEF26C900554490 /* SettingsTabUITests */ = {
+			isa = PBXGroup;
+			children = (
+				46DB33C42FEF26C900554490 /* SettingsTabUITests_testUnitsToggleAffectsHistoryDisplay_history_list_imperial_units.png */,
+				46DB33C52FEF26C900554490 /* SettingsTabUITests_testUnitsToggleAffectsHistoryDisplay_history_list_metric_units.png */,
+			);
+			path = SettingsTabUITests;
+			sourceTree = "<group>";
+		};
+		46DB33C92FEF26C900554490 /* StatisticsTabUITests */ = {
+			isa = PBXGroup;
+			children = (
+				46DB33C72FEF26C900554490 /* StatisticsTabUITests_testCyclingChartNavigationAndContent_statistics_chart_detail_7days.png */,
+				46DB33C82FEF26C900554490 /* StatisticsTabUITests_testCyclingChartNavigationAndContent_statistics_charts_list.png */,
+			);
+			path = StatisticsTabUITests;
+			sourceTree = "<group>";
+		};
+		46DB33CA2FEF26C900554490 /* ReferenceSnapshots */ = {
+			isa = PBXGroup;
+			children = (
+				46DB33C32FEF26C900554490 /* HistoryTabUITests */,
+				46DB33C62FEF26C900554490 /* SettingsTabUITests */,
+				46DB33C92FEF26C900554490 /* StatisticsTabUITests */,
+			);
+			path = ReferenceSnapshots;
+			sourceTree = "<group>";
+		};
+		46DB33D22FEF26DC00554490 /* TestPlans */ = {
+			isa = PBXGroup;
+			children = (
+				46DB33D12FEF26DC00554490 /* Go CyclingUITests.xctestplan */,
+			);
+			path = TestPlans;
+			sourceTree = "<group>";
+		};
 		9D1ED54E2643D38D005A97ED /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -728,8 +787,10 @@
 		9DAB833325FECAD400F5C42E /* Go CyclingUITests */ = {
 			isa = PBXGroup;
 			children = (
+				46DB33CA2FEF26C900554490 /* ReferenceSnapshots */,
 				E0E0A2ED2FEAC1A900A171A8 /* Helpers */,
 				E0E0A2CB2FE944A500A171A8 /* TestData */,
+				46DB33D22FEF26DC00554490 /* TestPlans */,
 				E0E08DAA2FE938AE00A171A8 /* Pages */,
 				E0E08DB02FE938D300A171A8 /* UITests */,
 				9DAB833625FECAD400F5C42E /* Info.plist */,
@@ -1018,6 +1079,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46DB33D32FEF26DC00554490 /* Go CyclingUITests.xctestplan in Resources */,
+				46DB33CB2FEF26C900554490 /* HistoryTabUITests_testHistoryRouteDetails_history_list_with_routes.png in Resources */,
+				46DB33CC2FEF26C900554490 /* SettingsTabUITests_testUnitsToggleAffectsHistoryDisplay_history_list_imperial_units.png in Resources */,
+				46DB33CD2FEF26C900554490 /* HistoryTabUITests_testHistoryRouteDetails_history_route_details.png in Resources */,
+				46DB33CE2FEF26C900554490 /* SettingsTabUITests_testUnitsToggleAffectsHistoryDisplay_history_list_metric_units.png in Resources */,
+				46DB33CF2FEF26C900554490 /* StatisticsTabUITests_testCyclingChartNavigationAndContent_statistics_charts_list.png in Resources */,
+				46DB33D02FEF26C900554490 /* StatisticsTabUITests_testCyclingChartNavigationAndContent_statistics_chart_detail_7days.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
