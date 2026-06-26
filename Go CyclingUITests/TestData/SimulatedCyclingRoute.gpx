@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="Xcode">
+
+    <!--
+     Simulated cycling route for UI tests.
+     Multiple waypoints with time elements — Xcode interpolates movement
+     at a rate of speed based on elapsed time between waypoints.
+     Route: short loop around Cupertino area (~cycling speed).
+     -->
+
+    <wpt lat="37.331705" lon="-122.030237">
+        <name>Start</name>
+        <time>2024-01-01T10:00:00Z</time>
+    </wpt>
+
+    <wpt lat="37.332500" lon="-122.031000">
+        <name>Point 2</name>
+        <time>2024-01-01T10:00:05Z</time>
+    </wpt>
+
+    <wpt lat="37.333400" lon="-122.031800">
+        <name>Point 3</name>
+        <time>2024-01-01T10:00:10Z</time>
+    </wpt>
+
+    <wpt lat="37.334300" lon="-122.032500">
+        <name>Point 4</name>
+        <time>2024-01-01T10:00:15Z</time>
+    </wpt>
+
+    <wpt lat="37.335200" lon="-122.033200">
+        <name>Point 5</name>
+        <time>2024-01-01T10:00:20Z</time>
+    </wpt>
+
+    <wpt lat="37.336100" lon="-122.033800">
+        <name>Point 6</name>
+        <time>2024-01-01T10:00:25Z</time>
+    </wpt>
+
+    <wpt lat="37.337000" lon="-122.034300">
+        <name>Point 7</name>
+        <time>2024-01-01T10:00:30Z</time>
+    </wpt>
+
+    <wpt lat="37.337800" lon="-122.034900">
+        <name>Point 8</name>
+        <time>2024-01-01T10:00:35Z</time>
+    </wpt>
+
+    <wpt lat="37.338500" lon="-122.035500">
+        <name>Point 9</name>
+        <time>2024-01-01T10:00:40Z</time>
+    </wpt>
+
+    <wpt lat="37.339200" lon="-122.036100">
+        <name>Point 10</name>
+        <time>2024-01-01T10:00:45Z</time>
+    </wpt>
+
+    <wpt lat="37.339900" lon="-122.036700">
+        <name>Point 11</name>
+        <time>2024-01-01T10:00:50Z</time>
+    </wpt>
+
+    <wpt lat="37.340500" lon="-122.037200">
+        <name>Point 12</name>
+        <time>2024-01-01T10:00:55Z</time>
+    </wpt>
+
+    <wpt lat="37.341100" lon="-122.037800">
+        <name>Point 13</name>
+        <time>2024-01-01T10:01:00Z</time>
+    </wpt>
+
+    <wpt lat="37.341700" lon="-122.038300">
+        <name>Point 14</name>
+        <time>2024-01-01T10:01:05Z</time>
+    </wpt>
+
+    <wpt lat="37.342300" lon="-122.038800">
+        <name>End</name>
+        <time>2024-01-01T10:01:10Z</time>
+    </wpt>
+
+</gpx>

@@ -1,0 +1,32 @@
+{
+  "configurations" : [
+    {
+      "id" : "DE334A74-543A-410F-811B-C9259741E2BE",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "locationScenario" : {
+      "identifier" : "..\/..\/Go CyclingUITests\/TestData\/SimulatedCyclingRoute.gpx"
+    },
+    "performanceAntipatternCheckerEnabled" : true,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:Go Cycling.xcodeproj",
+      "identifier" : "9DAB831325FECAD300F5C42E",
+      "name" : "Go Cycling"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:Go Cycling.xcodeproj",
+        "identifier" : "9DAB832F25FECAD400F5C42E",
+        "name" : "Go CyclingUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
